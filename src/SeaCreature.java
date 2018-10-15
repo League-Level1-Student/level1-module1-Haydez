@@ -23,7 +23,15 @@ public class SeaCreature {
 	}
 
 	public void eat() {
-		System.out.println(name + " is eating krabby patties");
+		System.out.println("OMoomomomomomomm");
+	}
+	
+	public void instrument() {
+		System.out.println("is mayonaise a instrument?");
+	}
+	
+	public void clarinet() {
+		System.out.println("DOOOoooOOOoOOoooooOOO00OOOoooOoooOOOO");
 	}
 
 	public void laugh() {
