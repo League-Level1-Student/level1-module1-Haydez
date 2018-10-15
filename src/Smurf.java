@@ -14,9 +14,12 @@
 public class Smurf {
 
 	private String name;
-
-	Smurf(String name) {
+			String color;
+			String gender;
+	Smurf(String name, String color, String gender) {
 		this.name = name;
+		this.color = color;
+		this.gender = gender;
 	}
 
 	public String getName() {
@@ -30,13 +33,13 @@ public class Smurf {
 	/* Papa Smurf wears a red hat, all the others are white. */
 	public String getHatColor() {
 		// 3. Fill in this method
-		return "";
+		return "my hat color is" + color;
 	}
 
 	/* Smurfette is the only female Smurf. */
 	public String isGirlOrBoy() {
 		// 4. Fill in this method
-		return "";
+		return "I am a" + gender;
 	}
 
 }
