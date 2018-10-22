@@ -13,7 +13,12 @@ public class Backpack
 	{
 		// Your mission is to go to school.
 		// 1. First you need to put all your supplies into your backpack - use the putInBackpack(...) methods
-
+		Pencil karl = new Pencil();
+		Ruler bob = new Ruler();
+		Textbook commitdie = new Textbook();
+		putInBackpack(karl);
+		putInBackpack(bob);
+		putInBackpack(commitdie);
 		goToSchool();
 	}
 
