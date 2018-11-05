@@ -1,13 +1,14 @@
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Binary implements MouseListener{
+public class Binary implements ActionListener{
 
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
@@ -17,41 +18,45 @@ public class Binary implements MouseListener{
 	void maker() {
 
 		frame.setVisible(true);
-		button.addMouseListener(this);
-		button.setName("convert");
+		button.addActionListener(this);
+		button.setText("Convert");
 		frame.setTitle("Convert 8 bits of binary to ASCII");
+		System.out.println("cuz everytime we touch i get this feeling cuz everytime we kiss i swear i could fly");
 		frame.add(panel);
 		panel.add(text);
 		panel.add(button);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		frame.pack();
+		
 	}
 	public static void main(String[] args) {
 		new Binary().maker();
 	}
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent e) {
+		System.out.println(text.getText());
+		
 		
 	}
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	String convert(String input) {
+        if(input.length() != 8){
+             JOptionPane.showMessageDialog(null, "Enter 8 bits, silly!!!");
+             return "-";
+        }
+        String binary = "[0-1]+";    //must contain numbers in the given range
+        if (!input.matches(binary)) {
+             JOptionPane.showMessageDialog(null, "Binary can only contain 1s or 0s, silly!!!");
+             return "-";
+        }
+        try {
+             int asciiValue = Integer.parseInt(input, 2);
+             char theLetter = (char) asciiValue;
+             return "" + theLetter;
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, "Enter a binary, silly!!!");
+             return "-";
+        }
+   }
 }
