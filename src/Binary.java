@@ -25,10 +25,11 @@ public class Binary implements ActionListener{
 		frame.add(panel);
 		panel.add(text);
 		panel.add(button);
+		panel.add(label);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.pack();
 		
+		frame.pack();
 	}
 	public static void main(String[] args) {
 		new Binary().maker();
@@ -36,8 +37,9 @@ public class Binary implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println(text.getText());
-		
-		
+		String letter = convert(text.getText());
+		label.setText(letter);
+		frame.pack();
 	}
 	
 	String convert(String input) {
